@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: Looking at people to reflect on themselves.
 ---
 
 My name is Quynh Tam.
