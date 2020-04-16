@@ -5,7 +5,6 @@ categories: [tiva-c]
 tags: [tivaC, TM4C123GH6PM, ARM, microcontroller]
 comments: true
 ---
-##Lưu ý khi sử dụng KIT Tiva C Launchpad TM4C123GH6PM
 
 **1. Nếu cần hàn thêm header cho các chân còn trống:**
 
@@ -37,7 +36,9 @@ Vị trí cấp nguồn tốt nhất cho mạch, đó là vị trí cấp nguồ
 **3. Đệm giữa I/O của MCU với ngoại vi**
 
 Có thể dùng transistor, ULN2803 như giới thiệu trong buổi training (tất nhiên là phải phù hợp với mục đích sử dụng).
-Cần nhớ rằng chân MCU có khả năng cấp / chịu dòng (source/sink current) giới hạn, bạn không được cho chân MCU tải quá giới hạn này (check datasheet,…). Khi nhiều chân I/O cùng cấp dòng ra có thể làm sụt áp nguồn, chip bị reset, chạy không ổn định, hoặc tệ hơn, die luôn, do đó, với các dòng MCU loại chân dán nhỏ nhỏ như thế này, ta luôn luôn phải đệm giữa chân MCU và các ngoại vi.
+Cần nhớ rằng chân MCU có khả năng cấp / chịu dòng (source/sink current) giới hạn, bạn không được cho chân MCU tải quá giới hạn này (check datasheet,…).
+Khi nhiều chân I/O cùng cấp dòng ra có thể làm sụt áp nguồn, chip bị reset, chạy không ổn định, hoặc tệ hơn, die luôn, do đó, với các dòng MCU loại chân dán nhỏ nhỏ như thế này, ta luôn luôn phải đệm giữa chân MCU và các ngoại vi.
+
 Một IC thường được sử dụng là 74HC245 – đệm không đảo (output = input)
 Lưu ý có 74HC245 (cấp nguồn được từ 2V – 6V), 74HCT245 (chỉ cấp nguồn 5V). Con này có 8 kênh vào, 8 kênh ra. Hướng truyền tín hiệu được quy định bởi chân DIR (nếu DIR=1 thì input là các chân A, output là các chân B, và ngược lại).
 Cách mắc sơ đồ như ví dụ sau:
@@ -47,7 +48,9 @@ Cách mắc sơ đồ như ví dụ sau:
 Khi cấp nguồn như Phần #2, bạn nên dùng nguồn 3v3 trên KIT M4 chỉ dành riêng cho MCUthôi, còn phần mạch phát triển của bạn có thêm một nguồn 3v3 khác, dành cho các ngoại vi, 2 nguồn này chỉ cần nối chung GND.
 Nguồn “khác” này cấp cho IC đệm 74HC245.
 Nếu muốn tạo ra tín hiệu 5V thì chỉ cần cấp nguồn 5V cho con 74HC245 là OK.
-Túm lại của cái post #3 này là: bạn luôn luôn phải đệm giữa chân MCU và bất-cứ-thứ-gì-bên-ngoài, kể cả chỉ xài để bật tắt 1 con LED cho vui mắt. Đơn giản nhất là dùng transistor (có thể tham khảo trong schematic kit M4, phần nối với con LED RGB: 3 chân đều có BJT đệm giữa). Chú ý thao tác này sẽ tránh được khá nhiều hậu quả.
+
+Túm lại của cái post #3 này là: **bạn luôn luôn phải đệm giữa chân MCU và bất-cứ-thứ-gì-bên-ngoài**, kể cả chỉ xài để bật tắt 1 con LED cho vui mắt.
+Đơn giản nhất là dùng transistor (có thể tham khảo trong schematic kit M4, phần nối với con LED RGB: 3 chân đều có BJT đệm giữa). Chú ý thao tác này sẽ tránh được khá nhiều hậu quả.
 
 **4. Không nên dùng nguồn 3v3 từ KIT M4 cấp cho các ngoại vi, ví dụ như Led Hồng ngoại và các IC điều khiển LED.**
 
