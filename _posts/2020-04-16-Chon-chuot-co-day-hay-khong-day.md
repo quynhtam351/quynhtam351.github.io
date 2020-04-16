@@ -10,9 +10,9 @@ Bạn cần mua chuột máy tính mới? Bạn phân vân không biết nên ch
 Chuột có dây là từ chỉ chuột máy tính kết nối với máy tính bằng dây cáp. Có 2 chuẩn kết nối phổ biến là PS/2 và USB, tuy nhiên hiện nay cổng PS/2 đã dần “chết” và chỉ còn USB phổ biến rộng rãi.
 ## Chuột không dây
 Chuột không dây kết nối với máy tính thông qua sóng radio (RF) hoặc Bluetooth.
-## Chuột không dây RF
+**Chuột không dây RF**
 Đa phần chuột không dây hiện nay sử dụng công nghệ sóng RF để giao tiếp với đầu thu, đầu thu sẽ truyền lại dữ liệu từ chuột thông qua cổng USB. Nếu bạn không may làm mất đầu thu bé xíu ấy thì coi như con chuột kia không còn sử dụng được nữa, tuy nhiên các hãng cũng cung cấp một số giải pháp để bạn thay thế đầu thu receiver nếu không may bị mất. Logitech có đầu thu ununifying, Genius cũng cung cấp công cụ cho phép kết nối chuột cũ với một đầu thu khác, tuy nhiên những giải pháp này chỉ áp dụng cho những thiết bị đắt tiền mà thôi.
-## Chuột Bluetooth
+**Chuột Bluetooth**
 Chuột Bluetooth kết nối với máy tính hoặc điện thoại, máy tính bảng thông qua sóng Bluetooth, không cần đầu thu receiver rườm rà và không lo mất đầu thu. Khoảng cách tối đa là khoảng 8-10m trong môi trường không có vật cản.
 ## Ưu nhược điểm của chuột không dây và có dây
 Chuột có dây có tính ổn định cao, ít khi mất kết nối và … không phải tốn tiền thay pin. Bù lại bạn sẽ phải dính với một sợi dây, hơi vướng víu tí, đặc biệt nếu bạn sử dụng PC và bàn của bạn không có lỗ luồn dây chuột thì sẽ khá bất tiện.
