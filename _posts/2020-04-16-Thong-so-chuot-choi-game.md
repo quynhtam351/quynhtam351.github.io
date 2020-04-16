@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Thông số chuột chơi game
+categories: [windows]
 tags: [mouse, chuot, gaming, hardware]
 comments: false
 ---
