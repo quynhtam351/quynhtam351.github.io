@@ -2,6 +2,7 @@
 layout: post
 title: Sửa lỗi Error connecting to target Tiva C
 subtitle: Tiva C Error connecting to target fix
+categories: [tiva-c]
 tags: [tivaC, TM4C123GH6PM, ARM, microcontroller]
 comments: true
 ---
