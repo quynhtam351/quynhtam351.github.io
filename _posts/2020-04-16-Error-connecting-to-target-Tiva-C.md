@@ -7,7 +7,9 @@ comments: true
 ---
 Đường đời chẳng mấy khi suôn sẻ, biết đâu ngày nào đó trên con đường trở thành coder dạo của bạn gặp trắc trở.
 Chẳng hạn như 1 buổi chiều trưa hè nóng nực, bạn đang hì hục code bật tắt led trên kit Tiva M4 để mang đi thi RYA, MCU contest,.. thì tự dưng bạn gặp lỗi "**'Cortex_m4_0 error connecting to the target'**".
-![TivaC-error-connecting](/img/TivaC-error-connecting/TivaC-error-connecting.png){: .center-block :}
+
+![TivaC-error-connecting](/img/TivaC-error-connecting/Error-connecting-to-the-target-tiva-c.png){: .center-block :}
+
 Bạn thấy điều đó thật lạ lẫm, bạn bấm nạp đi nạp lại, bạn tháo cáp usb, khởi động lại máy nhưng khi nạp vẫn hiện lên lỗi đó. Bạn hoang mang, bạn lo lắng khi sắp mất toi 280k cho cái kit vừa mua.
 
 Nguyên nhân: là do đã bị lock jtag dẫn đến không thể nạp code được.
@@ -39,4 +41,5 @@ Sau đó cài đặt, mở chương trình lên:
 ![LM-Flash-Programmer](/img/TivaC-error-connecting/LM-Flash-Programmer-5.png){: .center-block :}
 
 P/S: Bạn chưa gặp lỗi này, bạn muốn thử sức hay bạn muốn trải nghiệm. Hãy tải chương trình mẫu ở link dưới và nạp thử,sau đó hãy nạp 1 chương trình khác (Nếu may mắn kit bạn sẽ bị lỗi như trên và làm theo hướng dẫn)
-https://github.com/PIFClub/TIVAM4Tutorials/tree/master/TIVAM4_TUT_PWM_ControllingLedBrightness
+(https://github.com/PIFClub/TIVAM4Tutorials/tree/master/TIVAM4_TUT_PWM_ControllingLedBrightness)
+Nguồn: payitforward
