@@ -17,7 +17,9 @@ Hay đơn giản là dính 1 chú [keylogger](https://vi.wikipedia.org/wiki/Keyl
 ## 2.	Khi cài đặt phần mềm
 
 KHÔNG BAO GIỜ Next một cách mù quáng. Ví dụ đơn giản,
-![Next một cách mù quáng](/img/clicking.jpg){:class="img-responsive"}
+{:refdef: style="text-align: center;"}
+![Next một cách mù quáng]({{ site.baseimg }}/img/clicking.jpg)
+{: refdef}
 “By clicking ‘Next’ you are agreeing to our toolbar and search terms and conditions”,  nếu cứ nhắm mắt Next mà ko đọc thì sau khi cài xong, máy bạn sẽ là một gia đình đầm ấm nhộn nhịp với một “nùi” phần mềm rác chạy liên tục :v
 
 P/s: một số phần mềm yêu cầu khởi động lại sau khi cài, biết đâu bạn sẽ mất cái slide 20 trang đang soạn vì 1 nút Next
