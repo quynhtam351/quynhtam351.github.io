@@ -6,7 +6,7 @@ tags: [tivaC, TM4C123GH6PM, ARM, microcontroller]
 comments: true
 ---
 Đường đời chẳng mấy khi suôn sẻ, biết đâu ngày nào đó trên con đường trở thành coder dạo của bạn gặp trắc trở.
-Chẳng hạn như 1 buổi chiều trưa hè nóng nực, bạn đang hì hục code bật tắt led trên kit Tiva M4 để mang đi thi RYA, MCU contest,.. thì tự dưng bạn gặp lỗi "**'Cortex_m4_0 error connecting to the target'**".
+Chẳng hạn như 1 buổi chiều trưa hè nóng nực, bạn đang hì hục code bật tắt led trên kit Tiva M4 để mang đi thi RYA, MCU contest,.. thì tự dưng bạn gặp lỗi "**Cortex_m4_0 error connecting to the target**".
 
 ![TivaC-error-connecting](/img/TivaC-error-connecting/Error-connecting-to-the-target-tiva-c.png){: .center-block :}
 
