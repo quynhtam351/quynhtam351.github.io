@@ -23,6 +23,8 @@ Here's a useless table:
 | Seven | Eight | Six |
 | Two | Three | One |
 
+Here is an image:
+![Next một cách mù quáng](/img/clicking.jpg){:class="img-responsive".center-image}
 
 How about a yummy crepe??
 
