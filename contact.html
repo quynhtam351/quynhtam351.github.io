@@ -4,33 +4,88 @@ title: Text me!
 permalink: /contact.html
 ---
 
-<div class="text-center">
-  <h1>Text me!</h1>
-    <form action="https://formspree.io/xwknzyvo" method="POST">
-		<input type="text" name="name" placeholder="Name" style="margin-top: 20px;"><br>
-		<input type="email" name="email" placeholder="Email" style="margin-top: 20px;"><br>
-		<textarea type="text" name="message" placeholder="Message" style="margin-top: 20px;"></textarea><br>
-		<input type="submit" value="Send">
-		<input type="hidden" name="_next" value="https://quynhtam351.github.io/thanks.html" />
-	</form>
-</div>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-<div class="text-center">
-	<form id="form" class="form" action="https://formspree.io/xwknzyvo" method="POST">
-	<ul>
-		<li>
-			<label for="name">Your Name:</label>
-			<input type="text" placeholder="" id="name" name="name" tabindex="1">
-		</li>
-		<li>
-			<label for="email">Your Email:</label>
-			<input type="email" placeholder="" id="email" name="_replyto" tabindex="2">
-		</li>
-		<li>
-			<label for="message">Message:</label>
-			<textarea placeholder="" id="message" name="message" tabindex="3"></textarea>
-		</li>
-	</ul>
-	<input type="submit" value="Send" id="submit">
-	<input type="hidden" name="_next" value="/thanks.html"> </form>
+* {
+  box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+<div class="container">
+  <div style="text-align:center">
+    <h2>Contact Us</h2>
+    <p>Swing by for a cup of coffee, or leave us a message:</p>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img src="/w3images/map.jpg" style="width:100%">
+    </div>
+    <div class="column">
+      <form action="https://formspree.io/xwknzyvo" method="POST">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="Name" placeholder="Your name..">
+        <label for="mail">Email</label>
+        <input type="text" id="email" name="Email" placeholder="Your email..">
+        <label for="subject">Message</label>
+        <textarea id="subject" name="mess" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="submit" value="Submit">
+		<input type="hidden" name="_next" value="https://quynhtam351.github.io/thanks.html" />
+      </form>
+    </div>
+  </div>
 </div>
