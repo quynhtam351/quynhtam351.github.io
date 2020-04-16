@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Tổng hợp lỗi thường gặp trên máy tính và lưu ý khi sử dụng
+categories: [windows]
 tags: [hardware, software, windows, cmd]
 comments: false
 ---
