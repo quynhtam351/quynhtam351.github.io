@@ -21,4 +21,5 @@ Các nhà sản xuất thường hiếm khi đưa ra các mẫu chuột có Poll
 ## Liff Of Distance
 
 Đây là khoảng cách tối thiểu mà bạn phải nhấc chuột lên để cảm biến không còn hoạt động. Đối với các game thủ FPS thường xuyên nhấc chuột lên khỏi pad để vẩy chuột thì thông số này rất quan trọng. Thông số này càng thấp càng tốt, các chuột chơi game hiện nay đều có LOD khoảng 1-2mm, bạn chỉ cần nhấc chuột một đoạn ngắn là vẩy được rồi. Thông số LOD quá cao sẽ gây khó chịu khi bạn nhấc chuột lên, trỏ chuột vẫn di chuyển làm lệch mục tiêu. Đây là thông số quan trọng nếu bạn chơi các game FPS và có thói quen vẩy chuột, hoặc nếu bạn không có thói quen đó thì thôi bỏ qua vậy ^^
+
 Trên đây là các thông số cơ bản của một chú chuột chơi game hiện nay, mong rằng bài viết cung cấp cho bạn một lượng nhỏ kiến thức bổ ích và giúp bạn chọn được cho mình một mẫu gaming mouse ưng ý!
