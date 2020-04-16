@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Chọn chuột có dây hay không dây?
-subtitle: Tưởng dễ mà không dễ
 tags: [mouse, chuot, gaming, hardware]
 comments: false
 ---
