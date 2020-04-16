@@ -9,7 +9,7 @@
 
 medium:
     name: "Medium"
-    urlTemplate: "https://medium.com/{value}"
+    urlTemplate: "https://medium.com/@{value}"
     icon: "fab fa-medium"
 
 facebook:
