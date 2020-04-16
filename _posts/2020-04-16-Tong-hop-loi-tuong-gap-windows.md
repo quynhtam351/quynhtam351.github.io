@@ -25,4 +25,4 @@ KHÔNG BAO GIỜ Next một cách mù quáng. Ví dụ đơn giản,
 P/s: một số phần mềm yêu cầu khởi động lại sau khi cài, biết đâu bạn sẽ mất cái slide 20 trang đang soạn vì 1 nút Next
 
 
-** Updating... **
+**Updating...**
