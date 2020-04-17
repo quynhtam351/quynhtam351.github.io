@@ -23,6 +23,16 @@ Do mặt sau kit M4 có sẵn 2 hàng header cái, do vậy các bạn canh sao 
 
 ![Tiva C launchpad](/img/luu-y-khi-dung-launchpad/Tiva-C-launchpad-2.jpg){: .center-block :}
 
+Port từ A – D có 8 pins, port E có 6 pins và port F chỉ có 5 pins.
+
+* Port A: 01234567
+* Port B: 01234567
+* Port C: 4567
+* Port D: 0123-67
+* Port E: 012345
+* Port F: 01234
+
+
 **2. Cấp nguồn 5V từ mạch ngoài vào KIT Tiva C Launchpad**
 
 Do ta không thể lúc nào cũng dùng nguồn USB để chip M4 hoạt động, do đó cần phải có biện pháp cấp nguồn ngoài cho MCU. Một số bạn tận dụng các cọc 3V3 hoặc +Vbus (5V) tại 2 hàng header mở rộng để cấp nguồn qua các chân này, tuy nhiên cách đó không phải là tốt nhất.
@@ -45,9 +55,12 @@ Cách mắc sơ đồ như ví dụ sau:
 
 ![Tiva C launchpad](/img/luu-y-khi-dung-launchpad/Tiva-C-launchpad-4.png){: .center-block :}
 
-Khi cấp nguồn như Phần #2, bạn nên dùng nguồn 3v3 trên KIT M4 chỉ dành riêng cho MCUthôi, còn phần mạch phát triển của bạn có thêm một nguồn 3v3 khác, dành cho các ngoại vi, 2 nguồn này chỉ cần nối chung GND.
+Khi cấp nguồn như Phần #2, bạn nên dùng nguồn 3v3 trên KIT M4 chỉ dành riêng cho MCU thôi, còn phần mạch phát triển của bạn có thêm một nguồn 3v3 khác, dành cho các ngoại vi, 2 nguồn này chỉ cần nối chung GND.
 Nguồn “khác” này cấp cho IC đệm 74HC245.
 Nếu muốn tạo ra tín hiệu 5V thì chỉ cần cấp nguồn 5V cho con 74HC245 là OK.
+Các chân của TM4C123GH6PM có thể chịu được điện áp 5V, **trừ PD4, PD5, PB0 chỉ chịu được 3.6V**, tuy nhiên Launchpad chỉ có PB0 được layout.
+* Nếu cấp điện áp 5V trên chân GPIO khi MCU chưa được cấp nguồn VDD thì giới hạn chịu đựng là 10000 giờ ở nhiệt độ 27 độ C, 5000 giờ ở nhiệt độ 85 độ C, tính cộng dồn trong suốt vòng đời thiết bị.
+* Nếu cấp điện áp 3.3V trên chân GPIO khi MCU chưa được cấp nguồn VDD hoặc cấp điện áp 5V trên chân GPIO khi <b>đã</b> cấp nguồn VDD thì không ảnh hưởng đến TM4C123GH6PM.
 
 Túm lại của cái post #3 này là: **bạn luôn luôn phải đệm giữa chân MCU và bất-cứ-thứ-gì-bên-ngoài**, kể cả chỉ xài để bật tắt 1 con LED cho vui mắt.
 Đơn giản nhất là dùng transistor (có thể tham khảo trong schematic kit M4, phần nối với con LED RGB: 3 chân đều có BJT đệm giữa). Chú ý thao tác này sẽ tránh được khá nhiều hậu quả.
