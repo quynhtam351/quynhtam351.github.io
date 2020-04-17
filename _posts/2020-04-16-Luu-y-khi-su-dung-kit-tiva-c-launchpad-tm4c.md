@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Lưu ý khi sử dụng KIT Tiva C Launchpad TM4C123GH6PM
+description: Tổng hợp các vấn đề thường gặp cần lưu ý khi sử dụng KIT phát triển Tiva C Launchpad. Hướng dẫn unlock pins, cấp nguồn cho Tiva C.
 categories: [tiva-c]
 tags: [tivaC, TM4C123GH6PM, ARM, microcontroller]
 comments: true
@@ -141,7 +142,7 @@ while(!(SysCtlPeripheralReady(SYSCTL_PERIPH_I2C2)));
 ~~~
 **9. Ngắt giả khi chương trình khởi động lại**
 
-Khi chương trình CSS được khởi động lại bằng CPU reset, các ngoại vi không reset gây ra ngắt giả nếu chức năng ngắt được bật.
+Khi chương trình CCS được khởi động lại bằng CPU reset, các ngoại vi không reset gây ra ngắt giả nếu chức năng ngắt được bật.
 Có hai giải pháp cho vấn đề này:<br>
 * Luôn luôn dùng System Reset thay cho CPU reset.
 * Thêm các lệnh để đảm bảo các ngoại vi được reset trước khi kích hoạt clock. Bên dưới là một ví dụ với I2C2, các module khác có thể làm tương tự.
