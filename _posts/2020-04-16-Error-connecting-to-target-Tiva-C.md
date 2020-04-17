@@ -42,6 +42,6 @@ Sau đó cài đặt, mở chương trình lên:
 ![LM-Flash-Programmer](/img/TivaC-error-connecting/LM-Flash-Programmer-5.png){: .center-block :}
 
 P/S: Bạn chưa gặp lỗi này, bạn muốn thử sức hay bạn muốn trải nghiệm. Hãy tải chương trình mẫu ở link dưới và nạp thử,sau đó hãy nạp 1 chương trình khác (Nếu may mắn kit bạn sẽ bị lỗi như trên và làm theo hướng dẫn)
-(https://github.com/PIFClub/TIVAM4Tutorials/tree/master/TIVAM4_TUT_PWM_ControllingLedBrightness)
+[PWM_ControllingLedBrightness](https://github.com/PIFClub/TIVAM4Tutorials/tree/master/TIVAM4_TUT_PWM_ControllingLedBrightness)
 
 *Nguồn: payitforward*
