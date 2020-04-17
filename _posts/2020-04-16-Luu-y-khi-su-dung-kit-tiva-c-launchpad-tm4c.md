@@ -75,7 +75,7 @@ Nếu cắm nguồn mà đèn LED nguồn không sáng, đồng thời có gì �
 Các GPIO kể trên mặc định được khoá lại cho các chức năng JTAG và NMI.
 Để sử dụng các pin trên làm IO hoặc bất kì chức năng nào khác, phải mở khoá pin trước.
 Việc mở khoá bao gồm quá trình ghi các Key lên thanh ghi tương ứng và phải thực hiện trước khi cấu hình GPIO.
-Bên dưới là các ví dụ mở khoá cho GPIO:
+Bên dưới là các ví dụ mở khoá cho GPIO:<br>
 **Lưu ý: phải include các header định nghĩa key và địa chỉ thanh ghi, hoặc sử dụng giá trị trực tiếp**
 
 ~~~
@@ -84,7 +84,7 @@ Bên dưới là các ví dụ mở khoá cho GPIO:
 #include "inc/hw_memmap.h"
 ~~~
 
-Mở khoá TM4C123GH6PM Port C
+Mở khoá TM4C123GH6PM Port C<br>
 **Lưu ý: Port C sử dụng cho cổng JTAG nạp code và debug, không tự ý sử dụng cho chức năng khác**
 ~~~
 HWREG(GPIO_PORTC_BASE+GPIO_O_LOCK) = GPIO_LOCK_KEY;
@@ -101,7 +101,7 @@ HWREG(GPIO_PORTF_BASE+GPIO_O_LOCK) = GPIO_LOCK_KEY;
 HWREG(GPIO_PORTF_BASE+GPIO_O_CR) |= GPIO_PIN_0;
 ~~~
 
-**Phần này dùng cho họ <span style="color:red">TM4C129</span>**
+**Phần này dùng cho họ <span style="color:red">TM4C129</span>**<br>
 Mở khoá TM4C129 Port C
 ~~~
 HWREG(GPIO_PORTC_AHB_BASE+GPIO_O_LOCK) = GPIO_LOCK_KEY;
