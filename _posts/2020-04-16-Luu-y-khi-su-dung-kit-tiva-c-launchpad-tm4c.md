@@ -69,3 +69,58 @@ Các linh kiện trên board đều là linh kiện dán, nhỏ bé nên nếu b
 Nếu cắm nguồn mà đèn LED nguồn không sáng, đồng thời có gì đó nóng lên (MCU, IC nguồn,…) thì thôi, rút nguồn ra, đem lên support báo cáo tình trạng bệnh.
 
 *Nguồn: payitforward*
+
+**7. GPIO Port C0, C1, C2, C3, D7, E7 và F0 không hoạt động**
+
+Các GPIO kể trên mặc định được khoá lại cho các chức năng JTAG và NMI.
+Để sử dụng các pin trên làm IO hoặc bất kì chức năng nào khác, phải mở khoá pin trước.
+Việc mở khoá bao gồm quá trình ghi các Key lên thanh ghi tương ứng và phải thực hiện trước khi cấu hình GPIO.
+Bên dưới là các ví dụ mở khoá cho GPIO:
+**Lưu ý: phải include các header định nghĩa key và địa chỉ thanh ghi, hoặc sử dụng giá trị trực tiếp**
+
+~~~
+#include "inc/hw_types.h"
+#include "inc/hw_gpio.h"
+#include "inc/hw_memmap.h"
+~~~
+
+Mở khoá TM4C123GH6PM Port C
+**Lưu ý: Port C sử dụng cho cổng JTAG nạp code và debug, không tự ý sử dụng cho chức năng khác**
+~~~
+HWREG(GPIO_PORTC_BASE+GPIO_O_LOCK) = GPIO_LOCK_KEY;
+HWREG(GPIO_PORTC_BASE+GPIO_O_CR) |= (GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3);
+~~~
+Mở khoá TM4C123GH6PM Port D
+~~~
+HWREG(GPIO_PORTD_BASE+GPIO_O_LOCK) = GPIO_LOCK_KEY;
+HWREG(GPIO_PORTD_BASE+GPIO_O_CR) |= GPIO_PIN_7;
+~~~
+Mở khoá TM4C123GH6PM Port F
+~~~
+HWREG(GPIO_PORTF_BASE+GPIO_O_LOCK) = GPIO_LOCK_KEY;
+HWREG(GPIO_PORTF_BASE+GPIO_O_CR) |= GPIO_PIN_0;
+~~~
+
+**Phần này dùng cho họ <span style="color:red">TM4C129</span>**
+Mở khoá TM4C129 Port C
+~~~
+HWREG(GPIO_PORTC_AHB_BASE+GPIO_O_LOCK) = GPIO_LOCK_KEY;
+HWREG(GPIO_PORTC_AHB_BASE+GPIO_O_CR) |= (GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3);
+~~~
+Mở khoá TM4C129 Port D
+~~~
+HWREG(GPIO_PORTD_AHB_BASE+GPIO_O_LOCK) = GPIO_LOCK_KEY;
+HWREG(GPIO_PORTD_AHB_BASE+GPIO_O_CR) |= GPIO_PIN_7;
+~~~
+Mở khoá TM4C129 Port E
+~~~
+HWREG(GPIO_PORTE_AHB_BASE+GPIO_O_LOCK) = GPIO_LOCK_KEY;
+HWREG(GPIO_PORTE_AHB_BASE+GPIO_O_CR) |= GPIO_PIN_7;
+~~~
+
+
+
+
+
+
+
