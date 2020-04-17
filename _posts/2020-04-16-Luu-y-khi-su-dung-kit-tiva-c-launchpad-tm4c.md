@@ -118,6 +118,38 @@ HWREG(GPIO_PORTE_AHB_BASE+GPIO_O_LOCK) = GPIO_LOCK_KEY;
 HWREG(GPIO_PORTE_AHB_BASE+GPIO_O_CR) |= GPIO_PIN_7;
 ~~~
 
+**8. Sau khi bật (enable) ngoại vi (peripheral), chương trình nhảy vào FaultISR**
+Hàm enable viết vào thanh ghi SYSCTL.RCGCxxx, việc này mất 5 chu kì để đánh địa chỉ.
+ Nên có một khoảng delay nhỏ để ngoại vi được sẵn sàng. Bên dưới là code mẫu với cách tiếp cận tốt hơn:<br>
+~~~
+SysCtlPeripheralEnable(SYSCTL_PERIPH_I2C2);
+while(!(SysCtlPeripheralReady(SYSCTL_PERIPH_I2C2)));
+~~~
+**9. Ngắt giả khi chương trình khởi động lại**
+Khi chương trình CSS được khởi động lại bằng CPU reset, các ngoại vi không reset gây ra ngắt giả nếu chức năng ngắt được bật.
+Có hai giải pháp cho vấn đề này:<br>
+* Luôn luôn dùng System Reset thay cho CPU reset.
+* Thêm các lệnh để đảm bảo các ngoại vi được reset trước khi kích hoạt clock. Bên dưới là một ví dụ với I2C2, các module khác có thể làm tương tự.
+~~~
+SysCtlPeripheralDisable(SYSCTL_PERIPH_I2C2);
+SysCtlPeripheralReset(SYSCTL_PERIPH_I2C2);
+SysCtlPeripheralEnable(SYSCTL_PERIPH_I2C2);
+while(!(SysCtlPeripheralReady(SYSCTL_PERIPH_I2C2)));
+~~~
+
+**10. JTAG không thể kết nối trên board tuỳ biến**
+Tham khảo tài liệu [Using TM4C12x Devices Over JTAG Interface](http://www.ti.com/lit/an/spma075/spma075.pdf)
+
+**Updating...**
+
+
+
+
+
+
+
+
+
 
 
 
