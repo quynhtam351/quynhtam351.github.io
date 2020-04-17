@@ -89,12 +89,14 @@ social-network-links:
 social:
   name: Quynh Tam
   links:
-        
+       - https://github.com/quynhtam351
+       - https://medium.com/@quynhtam351
+       - https://twitter.com/VanTam64914374 
 # Select which share links to show in posts
 share-links-active:
   twitter: true
   facebook: true
-  linkedin: false
+  linkedin: true
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
