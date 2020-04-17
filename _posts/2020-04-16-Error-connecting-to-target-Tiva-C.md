@@ -2,6 +2,7 @@
 layout: post
 title: Sửa lỗi Error connecting to target Tiva C
 subtitle: Tiva C Error connecting to target fix
+description: Hướng dẫn sửa lỗi Error connecting to target khi dùng KIT Tiva C bị khoá không thể nạp code hay debug trên CCS.
 categories: [tiva-c]
 tags: [tivaC, TM4C123GH6PM, ARM, microcontroller]
 comments: true
