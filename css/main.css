@@ -155,7 +155,8 @@ img {
 
 @media only screen and (min-width: 768px) {
   .navbar-custom {
-    padding: 20px 0;
+    /*padding: 20px 0;*/
+	padding-top: 20px;
     -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
     -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
     transition: background .5s ease-in-out,padding .5s ease-in-out;
@@ -254,7 +255,8 @@ img {
   .navbar-custom .nav .navlinks-container .navlinks-children a {
     padding-left: 10px;
     border: 1px solid #eaeaea;
-    border-width: 0 1px 1px;
+	/*border-width: 0 1px 1px;*/
+    border-width: 0 0px 0px;
   }
 }
 
