@@ -132,7 +132,7 @@ img {
 .navbar-custom .nav li a:hover,
 .navbar-custom .nav li a:focus {
   /*color: {{ site.hover-col }};*/
-  color: #0085A1
+  color: #ff40a6
   
 }
 
