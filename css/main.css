@@ -131,7 +131,9 @@ img {
 .navbar-custom .navbar-brand:focus ,
 .navbar-custom .nav li a:hover,
 .navbar-custom .nav li a:focus {
-  color: {{ site.hover-col }};
+  /*color: {{ site.hover-col }};*/
+  color: #0085A1
+  
 }
 
 .navbar-custom .navbar-brand-logo {
@@ -333,8 +335,8 @@ footer .theme-by {
 .post-preview a:focus,
 .post-preview a:hover {
   text-decoration: none;
-  /*color: {{ site.hover-col }};*/
-  color: #0085A1
+  color: {{ site.hover-col }};
+  /*color: #0085A1*/
 }
 
 .post-preview .post-title {
