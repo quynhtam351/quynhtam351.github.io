@@ -134,11 +134,7 @@ img {
   /*color: {{ site.hover-col }};
   color: #ff40a6*/
   color: #ff66ff;
-  text-shadow:
-    0 0 5px #ff33ff,
-    0 0 10px #ff33ff,
-    0 0 20px #4d004d,
-    0 0 40px #4d004d;
+  text-shadow: 0 0 5px #ff66ff, 0 0 10px #ff33ff, 0 0 20px #ffcbff, 0 0 40px #fffefe
   
 }
 
