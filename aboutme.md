@@ -184,10 +184,10 @@ I'm an electrical engineer.
 I love electronic and computer science.
 I build this page for sharing my knowledge and storage them.
 <div class="row">
-  <div class="column">
-	<div class="card">
-		<div class = "skills">
-			<h1>Basic</h1>
+	<div class="column">
+		<div class="card">
+			<div class = "skills">
+				<h1>Basic</h1>
 				<li>
 					<h3>Search Engine Optimization</h3><div class = "bar"><div class = "seo"></div></div>
 				</li>
@@ -200,13 +200,13 @@ I build this page for sharing my knowledge and storage them.
 				<li>
 					<h3>Photoshop</h3><div class = "bar"><div class = "pts"></div></div>
 				</li>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="column">
-	<div class="card">
-		<div class = "skills">
-			<h1>Electrical</h1>
+	<div class="column">
+		<div class="card">
+			<div class = "skills">
+				<h1>Electrical</h1>
 				<li>
 					<h3>Basic Circuit Knowledge</h3><div class = "bar"><div class = "circuit"></div></div>
 				</li>
@@ -219,13 +219,13 @@ I build this page for sharing my knowledge and storage them.
 				<li>
 					<h3>Microcontroller Programing</h3><div class = "bar"><div class = "programing"></div></div>
 				</li>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="column">
-	<div class="card">
-		<div class = "skills">
-			<h1>Office</h1>
+	<div class="column">
+		<div class="card">
+			<div class = "skills">
+				<h1>Office</h1>
 				<li>
 					<h3>Windows OS</h3><div class = "bar"><div class = "windows"></div></div>
 				</li>
@@ -238,13 +238,13 @@ I build this page for sharing my knowledge and storage them.
 				<li>
 					<h3>MS Excel</h3><div class = "bar"><div class = "excel"></div></div>
 				</li>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="column">
-	<div class="card">
-		<div class = "skills">
-			<h1>Tools</h1>
+	<div class="column">
+		<div class="card">
+			<div class = "skills">
+				<h1>Tools</h1>
 				<li>
 					<h3>AutoCAD</h3><div class = "bar"><div class = "autocad"></div></div>
 				</li>
@@ -257,8 +257,8 @@ I build this page for sharing my knowledge and storage them.
 				<li>
 					<h3>Code Compose Studio</h3><div class = "bar"><div class = "ccs"></div></div>
 				</li>
+			</div>
 		</div>
 	</div>
-</div>
 </div>
 
