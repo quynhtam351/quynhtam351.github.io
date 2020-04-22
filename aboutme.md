@@ -3,6 +3,9 @@ layout: page
 title: About me
 subtitle: Looking at people to reflect on themselves.
 ---
+<h2>Mình là Quỳnh Tâm. Hiện tại mình là một kỹ sư điện. Bên cạnh đam mê về điện tử, mình cũng rất thích công nghệ thông tin.
+Trang web nhỏ này được lập ra để lưu trữ cũng như chia sẻ những kiến thức mình có được.</h2>
+<h2>Bên dưới là mô tả ngắn về những kỹ năng của mình</h2>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/style.css">
@@ -258,8 +261,5 @@ subtitle: Looking at people to reflect on themselves.
 		</div>
 	</div>
 </div>
-My name is Quynh Tam.
-I'm an electrical engineer.
-I love electronic and computer science.
-I build this page for sharing my knowledge and storage them.
+<p></p>
 
