@@ -179,10 +179,7 @@ subtitle: Looking at people to reflect on themselves.
 		}
 	</style>
 
-My name is Quynh Tam.
-I'm an electrical engineer.
-I love electronic and computer science.
-I build this page for sharing my knowledge and storage them.
+
 <div class="row">
 	<div class="column">
 		<div class="card">
@@ -261,4 +258,8 @@ I build this page for sharing my knowledge and storage them.
 		</div>
 	</div>
 </div>
+My name is Quynh Tam.
+I'm an electrical engineer.
+I love electronic and computer science.
+I build this page for sharing my knowledge and storage them.
 
