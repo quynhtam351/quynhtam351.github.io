@@ -7,8 +7,8 @@ subtitle: Looking at people to reflect on themselves.
 Trang web nhỏ này được lập ra để lưu trữ cũng như chia sẻ những kiến thức mình có được.</h2>
 <h2>Bên dưới là mô tả ngắn về những kỹ năng của mình</h2>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/about-style.css">
 <style>
 		.html{
 		  width: 50%;
