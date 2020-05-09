@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Sử dụng chức năng SysTick tạo delay chớp tắt led trên Tiva C
-subtitle: Tiva C Error connecting to target fix
 description: Sử dụng chức năng SysTick tích hợp của Tiva C TM4C123GH6PM để tạo delay chớp tắt led.
 categories: [tiva-c]
 tags: [tivaC, TM4C123GH6PM, ARM, microcontroller]
