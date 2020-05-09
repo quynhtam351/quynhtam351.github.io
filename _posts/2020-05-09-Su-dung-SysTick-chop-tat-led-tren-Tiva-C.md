@@ -24,6 +24,7 @@ void SysTickPeriodSet(uint32_t ui32Period)
 ~~~
 Ngoài ra còn có các hàm cần khai báo lần lượt là SysTickIntRegister, SysTickIntEnable, SysTickEnable.
 Bên dưới là code mẫu chớp tắt LED: LED đỏ chu kì 1 giây, LED xanh dương chu kì 2 giây và LED xanh lá chu kì 6 giây.
+Riêng LED xanh lá chớp tắt theo kiểu dùng hàm delay truyền thống, đặt trong vòng while, và 2 LED còn lại hoàn toàn không bị ảnh hưởng.
 ~~~
 #include <stdint.h>
 #include <stdbool.h>
