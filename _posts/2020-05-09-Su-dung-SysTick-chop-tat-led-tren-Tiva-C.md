@@ -7,6 +7,7 @@ categories: [tiva-c]
 tags: [tivaC, TM4C123GH6PM, ARM, microcontroller]
 comments: true
 ---
+
 **SysTick trên Tiva C là gì?**
 
 Cortex-M4 được tích hợp một timer hệ thống tên là SysTick, nó cung cấp một bộ đếm lùi 24 bit đơn giản với có chế điều khiển mềm dẻo.
@@ -17,7 +18,7 @@ Bộ đếm có thể được sử dụng theo nhiều cách, ví dụ:
 
 **Hàm API SysTick trong thư viện TivaWare**
 
-Đặt chu kì cho SysTick, giá trị Period nằm trong khoảng từ 1 đến 2^24
+Đặt chu kì cho SysTick, giá trị Period nằm trong khoảng từ 1 đến 2^24 do thanh ghi STRELOAD chứa giá trị này là thanh ghi 32bit tuy nhiên bit 24 đến 31 không được sử dụng (cũng không biết tại sao nsx làm vậy :D )
 ~~~
 void SysTickPeriodSet(uint32_t ui32Period)
 ~~~
