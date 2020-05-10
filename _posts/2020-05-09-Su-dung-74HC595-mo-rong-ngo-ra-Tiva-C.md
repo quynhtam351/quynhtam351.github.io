@@ -3,7 +3,7 @@ layout: post
 title: Sử dụng 74HC595 mở rộng ngõ ra Tiva C
 description: Code mẫu và hướng dẫn sử dụng IC 74HC595 để mở rộng ngõ ra cho Tiva C TM4C123GH6PM.
 categories: [tiva-c]
-tags: [tivaC, TM4C123GH6PM, ARM, microcontroller]
+tags: [tivaC, TM4C123GH6PM, ARM, microcontroller, 74HC595]
 comments: true
 ---
 
