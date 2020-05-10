@@ -7,12 +7,21 @@ tags: [tivaC, TM4C123GH6PM, ARM, microcontroller, US-015]
 comments: true
 ---
 
-**Cảm biến siêu âm đo khoảng cách US-015**
+<h2>**Cảm biến siêu âm đo khoảng cách US-015**</h2>
 
 Cảm biến siêu âm Ultrasonic US-015 được sử dụng để nhận biết khoảng cách từ vật thể đến cảm biến nhờ sóng siêu âm, cảm biến có thời gian phản hồi nhanh, độ chính xác cao, phù hợp cho các ứng dụng phát hiện vật cản, đo khoảng cách bằng sóng siêu âm.
 
 Cảm biến siêu âm Ultrasonic US-015 được đánh giá là cho độ ổn định và chính xác cao hơn so với hai phiên bản cảm biến siêu âm HY-SRF05 và HC-SR04 với cách sử dụng, thư viện và code mẫu tương thích 100%.
 
+<h2>**Nguyên lý hoạt động của các cảm biến siêu âm đo khoảng cách US-015, SRF0, SRF05**</h2>
+
+Sau khi cấp nguồn cho US-015, ta bắt đầu cấp một xung mức cao vào chân Trigger của US-015, sau đó module sẽ phát ra sóng siêu âm, sóng này lan truyền trong không khí, khi gặp vật cản, sóng phản hồi lại và được nhận biết bởi cảm biến trên US-015.
+Khi nhận được sóng siêu âm phản hồi, US-015 sẽ tạo một xung mức cao trên chân Echo, ta sẽ dùng vi điều khiển đo thời gian tính từ lúc bắt đầu phát siêu âm tới khi nhận được phản hồi, dựa vào tốc độ âm thanh trong không khí để tính ra khoảng cách.
+**Lưu ý:**
+* Cần chia đôi kết quả vì tổng thời gian đo được là thời gian cả lượt đi và lượt về của sóng siêu âm.
+* Do cảm biến hoạt động bằng cách thu lại sóng phản hồi nên đối với môi trường quá rộng, bề mặt cần đo hấp thụ hoặc tán xạ sóng siêu âm thì kết quả đo có thể không chính xác.
+
+<h2>**Code mẫu US-015 với Tiva C dùng delay**</h2>
 ~~~
 #include <stdint.h>
 #include <stdbool.h>
