@@ -17,7 +17,7 @@ Có thể hiểu đơn giản là 74HC595 dịch dữ liệu từ 8 chân input 
 <h2>Thông số và cách sử dụng 74HC165</h2>
 
 Điện áp hoạt động của 74HC165 khá rộng, từ 2 - 6V, thông thường là 5V.
-![74HC165 Pin diagram](img/74HC/74HC165-pin-diagram.jpg){: .center-block :}
+![74HC165 Pin diagram](/img/74HC/74HC165-pin-diagram.jpg){: .center-block :}
 
 Chức năng các pin như sau:
 | Tên | Chức năng |
