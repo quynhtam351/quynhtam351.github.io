@@ -30,7 +30,7 @@ Chức năng các pin như sau:
 |QH|Ngõ ra nối tiếp|
 |QH|Ngõ ra nối tiếp đảo ngược|
 |SER|Ngõ vào nối tiếp, ứng dụng cho nối tiếp nhiều HC165|
-|SH/LD|Dịch hoặc tải ngõ vào. Khi ở mức cao dữ liệu được dịch đi, khi ở mức thấp nạp dữ liệu từ ngõ vào song song.|
+|SH/<span style="text-decoration: overline">LD</span>|Dịch hoặc tải ngõ vào. Khi ở mức cao dữ liệu được dịch đi, khi ở mức thấp nạp dữ liệu từ ngõ vào song song.|
 |VCC|Chân nguồn dương|
 
 <br>
