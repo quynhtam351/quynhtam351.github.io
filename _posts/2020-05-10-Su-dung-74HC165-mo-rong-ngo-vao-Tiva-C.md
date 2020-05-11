@@ -33,7 +33,7 @@ Chức năng các pin như sau:
 |SH/LD|Dịch hoặc tải ngõ vào. Khi ở mức cao dữ liệu được dịch đi, khi ở mức thấp nạp dữ liệu từ ngõ vào song song.|
 |VCC|Chân nguồn dương|
 
-
+<br>
 ~~~
 //------ 74HC165--------------
 #define HC_DS    GPIO_PIN_1
