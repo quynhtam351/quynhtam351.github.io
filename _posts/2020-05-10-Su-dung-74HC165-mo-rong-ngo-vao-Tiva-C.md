@@ -20,6 +20,7 @@ Có thể hiểu đơn giản là 74HC595 dịch dữ liệu từ 8 chân input 
 ![74HC165 Pin diagram](/img/74HC/74HC165-pin-diagram.jpg){: .center-block :}
 
 Chức năng các pin như sau:
+
 | Tên | Chức năng |
 | :------ |:--- |
 |A,B,C,D,E,F,G,H|Ngõ vào song song|
