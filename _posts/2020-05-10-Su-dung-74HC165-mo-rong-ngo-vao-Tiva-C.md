@@ -7,12 +7,31 @@ tags: [tivaC, TM4C123GH6PM, ARM, microcontroller, 74HC165]
 comments: true
 ---
 
-**Chức năng IC 74HC165**
+<h2>Chức năng IC 74HC165</h2>
 
 74HC165 là các IC dịch 8 bit dữ liệu song song sang nối tiếp khi được cấp xung clock.
 Các IC 74HC165 còn có chức năng cấm đầu ra (ngừng đầu ra) và dịch bit nối tiếp đầu ra sang IC bổ sung.
 Có thể hiểu đơn giản là 74HC595 dịch dữ liệu từ 8 chân input song song thành dữ liệu trên một chân output duy nhất, và còn có khả năng nối tiếp nhiều IC với nhau.
 Điều này có nghĩa là với 4 chân của vi điều khiển, ta có thể mở rộng ngõ vào thành những con số rất lớn: 8, 16, 24, 32, ...
+
+<h2>Thông số và cách sử dụng 74HC165</h2>
+
+Điện áp hoạt động của 74HC165 khá rộng, từ 2 - 6V, thông thường là 5V.
+![74HC165 Pin diagram](img/74HC/74HC165-pin-diagram.jpg){: .center-block :}
+
+Chức năng các pin như sau:
+| Tên | Chức năng |
+| :------ |:--- |
+|A,B,C,D,E,F,G,H|Ngõ vào song song|
+|CLK|Ngõ vào xung clock|
+|CLK INH|Cấm clock. Khi ở mức cao, không có sự thay đổi ở ngõ ra|
+|GND|Chân GND|
+|QH|Ngõ ra nối tiếp|
+|QH|Ngõ ra nối tiếp đảo ngược|
+|SER|Ngõ vào nối tiếp, ứng dụng cho nối tiếp nhiều HC165|
+|SH/LD|Dịch hoặc tải ngõ vào. Khi ở mức cao dữ liệu được dịch đi, khi ở mức thấp nạp dữ liệu từ ngõ vào song song.|
+|VCC|Chân nguồn dương|
+
 
 ~~~
 //------ 74HC165--------------
