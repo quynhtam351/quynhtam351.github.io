@@ -38,6 +38,7 @@ Chức năng các pin như sau:
 - Kéo chân CLK INH xuống thấp để cho phép đầu ra.
 - Đọc bit đầu tiên ở ngõ ra sau đó cấp xung vào chân CLK để lần lượt đọc các bit tiếp theo.
 - Nếu nối tiếp nhiều HC165 thì ngõ ra của IC trước nối vào ngõ vào nối tiếp SER của IC sau, các chân CLK, CLK INH và SH/<span style="text-decoration: overline">LD</span> nối chung để cùng nhận tín hiệu điều khiển.
+
 ~~~
 //------ 74HC165--------------
 #define HC_DS    GPIO_PIN_1
