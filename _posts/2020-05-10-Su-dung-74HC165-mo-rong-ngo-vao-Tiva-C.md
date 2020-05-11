@@ -28,12 +28,16 @@ Chức năng các pin như sau:
 |CLK INH|Cấm clock. Khi ở mức cao, không có sự thay đổi ở ngõ ra|
 |GND|Chân GND|
 |QH|Ngõ ra nối tiếp|
-|QH|Ngõ ra nối tiếp đảo ngược|
+|<span style="text-decoration: overline">QH</span>|Ngõ ra nối tiếp đảo ngược|
 |SER|Ngõ vào nối tiếp, ứng dụng cho nối tiếp nhiều HC165|
 |SH/<span style="text-decoration: overline">LD</span>|Dịch hoặc tải ngõ vào. Khi ở mức cao dữ liệu được dịch đi, khi ở mức thấp nạp dữ liệu từ ngõ vào song song.|
 |VCC|Chân nguồn dương|
 
-<br>
+**Nguyên lý hoạt động:**
+- Kéo chân LD xuống thấp trong khoảng 2ms sau đó đưa lại mức cao, lúc này trạng thái 8 ngõ vào được đưa vào thanh ghi của HC165.
+- Kéo chân CLK INH xuống thấp để cho phép đầu ra.
+- Đọc bit đầu tiên ở ngõ ra sau đó cấp xung vào chân CLK để lần lượt đọc các bit tiếp theo.
+- Nếu nối tiếp nhiều HC165 thì ngõ ra của IC trước nối vào ngõ vào nối tiếp SER của IC sau, các chân CLK, CLK INH và SH/<span style="text-decoration: overline">LD</span> nối chung để cùng nhận tín hiệu điều khiển.
 ~~~
 //------ 74HC165--------------
 #define HC_DS    GPIO_PIN_1
@@ -52,7 +56,7 @@ void HC165_In(void)
 
     uint8_t i;
     temp = 0;
-    for(i = 0; i < 24; i++)
+    for(i = 0; i < 24; i++) //nối tiếp 3 IC 74HC165 => 24 bits
     {
         //temp = ((temp<<1)|(GPIOPinRead(GPIO_PORTF_BASE, HC_DS)>>1));
         if(GPIOPinRead(GPIO_PORTF_BASE, HC_DS) != 0)
