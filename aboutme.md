@@ -10,11 +10,11 @@ Trang web nhỏ này được lập ra để lưu trữ cũng như chia sẻ nh�
 
 <h3>Châm ngôn sống:</h3>
 
-- **Looking at people to reflect on themselves - Nhìn người để ngẫm lại mình.**
+**Looking at people to reflect on themselves - Nhìn người để ngẫm lại mình.**
 
 Nhìn và học tập từ người khác là một phương pháp tốt, nó đã giúp con người thống trị như ngày hôm nay.
 
-- “I don’t need to know everything, I just need to know where to find it, when I need it.” - Albert Einstein.
+**“I don’t need to know everything, I just need to know where to find it, when I need it.” - Albert Einstein.**
 
 Tôi không cần biết tất cả mọi thứ, tôi chỉ cần biết nơi tìm thấy nó, khi tôi cần. Bạn không thể nhớ tất cả mọi thứ, tên một cuốn sách hay một trang web trên internet nơi bạn có thể tìm thấy những dòng code, command hay hướng dẫn khi bạn cần mới là thứ đáng nhớ. Đương nhiên những kiến thức cơ bản hoặc thiết yếu thì phải nhớ rồi.
 
