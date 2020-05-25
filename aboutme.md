@@ -8,9 +8,9 @@ subtitle: Looking at people to reflect on themselves.
 Hiện tại mình là một kỹ sư điện. Bên cạnh đam mê về điện tử, mình cũng rất thích công nghệ thông tin.
 Trang web nhỏ này được lập ra để lưu trữ cũng như chia sẻ những kiến thức mình có được.
 
-<h3>Châm ngôn sống:</h3>
+<h3>Châm ngôn sống của mình:</h3>
 
-**Looking at people to reflect on themselves - Nhìn người để ngẫm lại mình.**
+**"Looking at people to reflect on themselves" - Nhìn người để ngẫm lại mình.**
 
 Nhìn và học tập từ người khác là một phương pháp tốt, nó đã giúp con người thống trị như ngày hôm nay.
 
@@ -19,22 +19,18 @@ Nhìn và học tập từ người khác là một phương pháp tốt, nó đ
 Tôi không cần biết tất cả mọi thứ, tôi chỉ cần biết nơi tìm thấy nó, khi tôi cần. Bạn không thể nhớ tất cả mọi thứ, tên một cuốn sách hay một trang web trên internet nơi bạn có thể tìm thấy những dòng code, command hay hướng dẫn khi bạn cần mới là thứ đáng nhớ. Đương nhiên những kiến thức cơ bản hoặc thiết yếu thì phải nhớ rồi.
 
 <h3>Tâm</h3>
-
 Mình vẫn thường nói nửa đùa với bạn bè rằng "làm việc có Tâm sẽ khác", mình nói đùa về vai trò của mình trong nhóm, nhưng lại nói thật lòng về việc "có Tâm" khi làm việc.
 Cho dù bạn mình bất kì việc gì, dù mình có thích nó hay không, mình vẫn đặt cái Tâm của mình vào đó, hoàn thành tốt nhất trong khả năng. 
 Đôi khi mình cảm thấy mệt mỏi, tốn thời gian và công sức, nhưng sự tự hào về bản thân và kết quả công việc đem lại cho mình cảm giác tuyệt vời hơn nhiều. Và hơn hết là mình tên Tâm.
 
 <h3>Tài</h3>
-
 “Tài” chính là tài năng, kiến thức, hiểu biết, kỹ năng, kỹ xảo, kinh nghiệm sống để có thể hoàn thành công việc của mình một cách tốt nhất.
 Cho dù làm bất cứ việc gì cũng phải hiểu rõ việc mình làm, trang bị cho bản thân kiến thức cần thiết trong công việc vì "nhiệt tình + ngu dốt = phá hoại". Không cần phải quá "tài", nhưng phải đủ. 
 
 <h3>Đức</h3>
-
 Biết tôn trọng và bảo vệ chân lý, dám đấu tranh với sai lầm, sẵn sàng hy sinh quyền lợi cá nhân cho quyền lợi của tập thể. Đạo đức là phẩm chất không thể thiếu của một con người.
 
 <h3>Tín</h3>
-
 "Một lần thất tín, vạn lần thất tin", lỡ thất Tín sẽ không có lần thứ 2, do đó bản thân mình luôn cố gắng giữ chữ tín.
 
 <h3>Mô tả ngắn về những kỹ năng của mình:</h3>
