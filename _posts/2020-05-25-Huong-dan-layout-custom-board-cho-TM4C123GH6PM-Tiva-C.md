@@ -24,9 +24,9 @@ Hạn chế sử dụng lỗ Via và tham khảo kích thước lỗ Via tối t
 
 Theo các nghiên cứu, góc 90 độ không ảnh hưởng đến chất lượng tín hiệu trên dây, tuy nhiên khi vẽ mạch cần tránh góc 90 độ do các lý do sau:
 
--Góc 90 độ tạo thành một góc “bẫy axit” khi gia công, làm mòn góc, giảm độ rộng thực tế của đường mạch tại góc này.
--Thay góc 90 độ bằng  2 góc 45 độ giúp giảm độ dài đường dây
--Trên thực tế, đi dây 45 độ cho tính thẩm mỹ cao hơn
+- Góc 90 độ tạo thành một góc “bẫy axit” khi gia công, làm mòn góc, giảm độ rộng thực tế của đường mạch tại góc này.
+- Thay góc 90 độ bằng  2 góc 45 độ giúp giảm độ dài đường dây
+- Trên thực tế, đi dây 45 độ cho tính thẩm mỹ cao hơn
 
 <h2>4.Phủ đồng</h2>
 
