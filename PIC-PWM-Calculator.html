@@ -1,0 +1,462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0037)http://eng-serve.com/pic/pic_pwm.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15">
+		<title>Dring Engineering Services PWM Calculator</title>
+		<style type="text/css">
+.required
+{ background-color:#66FFCC;}
+.calculated
+{ background-color:#CC9999;}
+
+.results
+{
+	text-align:right;
+}
+.sourceCode
+{ background-color:#FFFFAA; border-width:thick;
+ }
+ code {font-size:12px;}
+#centre {
+border:1px solid #202020;
+border-bottom:0;
+border-top:0;
+color:#000;
+padding:1.5em;
+}
+
+#contents {
+background-color:#fafafa;
+margin:1em 10%;
+min-width:60em;
+position:absolute;
+width:80%;
+}
+
+#haut {
+background-color:#202020;
+height:2.4em;
+max-height:2.4em;
+}
+
+#header {
+background-color:#3882C7;
+border:1px solid #fafafa;
+color:#fafafa;
+font-size:2em;
+height:2.5em;
+padding-left:2em;
+padding-top:1em;
+}
+
+#pied {
+border:1px solid #202020;
+border-top:0;
+padding:0.5em;
+text-align:right;
+}
+
+.menuhaut {
+font-size:1em;
+list-style-type:none;
+margin:0;
+padding:0;
+}
+
+.menuhaut a {
+color:#fafafa;
+margin:0 0.4em;
+text-decoration:none;
+}
+
+.menuhaut a:hover {
+color:#FF0;
+text-decoration:none;
+}
+
+.menuhaut li {
+border-right:1px solid #fff;
+display:inline;
+float:left;
+margin:0;
+padding:0.6em 10px;
+}
+
+a {
+color:#000;
+text-decoration:underline;
+}
+
+body {
+background-color:#CDCDCD;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:0.75em;
+}
+
+h1 {
+font-size:1.6em;
+margin:0.5em 0.5em 1em 0;
+}
+
+h2 {
+font-size:1.2em;
+margin:0.8em 0.5em 0.3em 0.6em;
+}
+
+h3 {
+font-size:1.1em;
+margin:0.8em 0.5em 0.3em 0.8em;
+}
+
+h4 {
+font-size:1em;
+margin:0.7em 0.5em 0.3em 1em;
+}
+
+h5 {
+font-size:0.9em;
+margin:0.6em 0.5em 0.2em 1.5em;
+}
+
+p {
+margin:1px 0.5em 0.5em 1.5em;
+}
+</style>
+<script language="javascript">
+
+function setT2CON(preScaleVal)
+{
+	// set the T2CON parameter based on the prescaler value + add the bit2 turn on
+
+	if (preScaleVal == 1)
+		return "00000100";
+	else if (preScaleVal == 4)
+		return "00000101";
+	else if (preScaleVal == 16)
+		return "00000111";
+	else
+		return "error";
+}
+
+function binaryString(inVal)
+{
+	// convert an 8-bit value to a binary string
+
+	var i, retVal;
+	
+	retVal = "";
+	
+	for (i=0; i<8; i++)
+	{
+		if (inVal & 1<<i)
+			retVal = "1" + retVal;
+		else
+			retVal = "0" + retVal;
+	}
+	return retVal;
+}
+
+function setValueById(ID, Value)
+{
+	// set the innerHTML value on an element with id=ID
+	var obj = document.getElementById(ID);
+	//var obj = document.getElementsByName(ID);
+	obj.innerHTML = Value ;
+}
+
+function calcPWM()
+{
+
+
+	var osc_freq, pwm_period;	
+	var pwm_freq, pwm_freq_actual, pwm_period;
+	
+	var PR2, prescale, maxResolution, sc, dutyValMax, dutyVal;	
+	
+	
+	//clear the results
+	for (prescale = 1; prescale <=16; prescale *= 4)  // loop through all of the possible prescale values
+	{
+		setValueById("PR2_" + prescale , "");			
+		setValueById("PR2_" + prescale , "");				
+		setValueById("ActualPWM_" + prescale , "");  // blank out the unused table cells
+		setValueById("T2CON_" + prescale , "");
+		setValueById( "CCPR1L_" + prescale, "");
+		setValueById("CCP1CON_" + prescale,  "");
+		setValueById("MaxDuty_" + prescale, "");
+	}
+	document.pwmForm.sourceCode.value = "";
+	
+	// determine if the PWM value is OK
+	if (isNaN(document.pwmForm.DutyCycle.value))
+		alert("Warning: Duty value must be number");
+	else
+		dutyVal = document.pwmForm.DutyCycle.value;
+	
+	if (document.pwmForm.dutyType[0].checked)
+	{				
+		if (dutyVal < 0 || dutyVal > 100)
+		{
+			alert("Warning: Duty percent must be number 0-100");
+			return;
+		}
+	}
+	
+	
+	
+	
+	osc_freq = document.pwmForm.osc_freq.value;
+	pwm_freq = document.pwmForm.PWM_Freq.value;
+	
+	// determine if the frequencies are OK
+	if (isNaN(osc_freq) || isNaN(pwm_freq))
+	{
+		alert("Warning: Oscillator and PWM Frequencies must be numbers");
+		return;
+	}
+	
+	
+	osc_period = 1/osc_freq;   // calculate the periods
+	pwm_period = 1/pwm_freq;
+		
+	sc = "";  // initialize a string variable for the source code printout
+	
+	for (prescale = 1; prescale <=16; prescale *= 4)  // loop through all of the possible prescale values
+	{
+		
+		setValueById("prescaler" + prescale , prescale);
+		PR2 = Math.round((pwm_period)/(prescale * osc_period * 4)-1);  // calculate a PR2 value
+		
+		
+		if (PR2 > 255 || PR2 < 1)  // only values between 255 and 1 will be allowed
+		{
+			if (PR2 > 255)
+				setValueById("PR2_" + prescale , "Too high");
+			else
+				setValueById("PR2_" + prescale , "Too low");
+		}
+		else
+		{
+			pwm_freq_actual = 1/((PR2 + 1) * osc_period * 4 * prescale);    // determine the actual PWM frequency with these settings
+			dutyValMax = Math.round(pwm_period / (osc_period * prescale));  //calculate the maximum duty value that this prescale allows
+			 
+			if (document.pwmForm.dutyType[0].checked) // calculate duty cycle based on wether this is a percent or an absolute value
+			{				
+				dutyVal = Math.round(dutyVal/100 * dutyValMax);	
+			}
+			else
+			{
+				if (dutyVal > dutyValMax) // be sure the requested value does not exceed the maximum
+					alert("Warning: Requested duty value exceeds maximun for prescaler: " + prescale);			
+				//alert("boo");
+				//dutyVal = document.pwmForm.DutyCycle.value + 0;
+			}
+			
+			
+			
+			setValueById("PR2_" + prescale , "(" + PR2 + ") 0b" + binaryString(PR2));
+			setValueById("ActualPWM_" + prescale , Math.round(pwm_freq_actual));
+			setValueById("T2CON_" + prescale , "0b" + setT2CON(prescale));
+			setValueById( "CCPR1L_" + prescale, "0b" + binaryString(dutyVal >> 2));
+			setValueById("CCP1CON_" + prescale,  "0b" +  binaryString( ((dutyVal & 3) << 4) + 0x0C));
+			setValueById("MaxDuty_" + prescale, dutyValMax);
+			
+			//create the source code output
+			sc += "/*\n";  
+			sc += " * PWM Register Values\n";
+			sc += " * Oscillator Frequency Fosc = " + osc_freq + "\n";
+			sc += " * Clock Frequency Fclk = " + osc_freq/4 + "\n";
+			sc += " * PWM Freq = " + pwm_freq + " desired...actual: " + Math.round(pwm_freq_actual) +  "\n";
+			sc += " * Prescaler Value = " + prescale + "\n";
+			sc += " * PR2 = " + PR2 + "\n";
+			sc += " * Maximum duty value = " + dutyValMax + " \n";
+			//sc += " * Resolution (bits) = " + maxResolution + " \n";
+			sc += " * Requested Duty Value = " + dutyVal + "\n";
+			sc += " * \n";
+			sc += " * Code Provided AS IS....Use at your own risk!\n";
+			sc += "*/\n\n"
+			
+			sc += "// be sure to set PWM port as output\n";
+			sc += "T2CON = 0b" + setT2CON(prescale) + "; // prescaler + turn on TMR2;\n";
+			sc += "PR2 = 0b" + binaryString(PR2) + ";\n";
+			sc += "CCPR1L = 0b" + binaryString(dutyVal >> 2)  + ";  // set duty MSB\n";
+			sc += "CCP1CON = 0b" + binaryString( ((dutyVal & 3) << 4) + 0x0C) + "; // duty lowest bits + PWM mode\n\n\n\n";   // and it with 3 then shiftit over 44 bits into the 4 and fifth bit add 12 to put in pwm mode
+		}
+	
+	}
+	
+	document.pwmForm.sourceCode.value = sc;
+	
+	
+}
+</script>
+		
+		<link rel="stylesheet" href="./Dring Engineering Services PWM Calculator_files/styles.css">
+	</head>
+	<body>
+	<div id="contents">
+		  <div id="header">PIC PWM Calculator and Source Code </div>
+		  
+		  <div id="haut">
+			<ul class="menuhaut">
+				<li><a href="http://eng-serve.com/index.html">Home</a></li>
+				<li><a href="http://eng-serve.com/pic/pic_pwm.html">Projects</a></li>
+				<li><a href="http://eng-serve.com/pic/pic_pwm.html">CNC</a></li>
+				<li><a href="http://eng-serve.com/pic/index.html">PIC</a></li>
+			</ul>
+			
+		  </div>
+
+	  <div id="centre">
+	  <h1>PIC PWM Register Calculator</h1>
+	  Use the calculator below to generate the parameters for the PWM Registers.  It was designed for the 16F877A, but will work for all chips
+	  with the same Registers.  It tries to calculate the Registers for all possible values of the prescaler.  If a prescaler value results in a PR2 value
+	  that is not possible.  It will not fill in the values.  You can cut and paste the register values from the text area below the calculator.  Chose 
+	  the code for the prescaler you desire.  The code is provided 'AS IS'.  User assumes all risk.
+<form id="form1" name="pwmForm">
+<table width="" border="0" cellspacing="0" cellpadding="2">
+<tbody><tr>
+    <th scope="col">Parameter </th>
+    <th scope="col">Value</th>
+    <th scope="col">Unit</th>
+    <th scope="col">&nbsp;</th>
+</tr>
+  <tr>
+    <td>Oscillator Frequency </td>
+    <td><input name="osc_freq" type="text" value="8000000" size="12" class="required" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: pointer;"></td>
+    <td>Hz</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>PWM Frequency </td>
+    <td><input name="PWM_Freq" type="text" value="10000" size="12" class="required"></td>
+    <td>Hz</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Duty Cycle </td>
+    <td><input name="DutyCycle" type="text" value="50" size="12" class="required"></td>
+    <td align="left"><label>
+          <input type="radio" name="dutyType" value="percent" checked="checked">
+          Percent
+    </label>
+        
+        <label>
+          <input type="radio" name="dutyType" value="value">
+          Value</label>
+        <br>      </td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Prescaler</td>
+    <td id="prescaler1" class="results"></td>
+    <td id="prescaler4" class="results"></td>
+    <td id="prescaler16" class="results"></td>
+  </tr>
+  <tr>
+    <td>PR2</td>
+    <td id="PR2_1" class="results">&nbsp;</td>
+    <td id="PR2_4" class="results">&nbsp;</td>
+    <td id="PR2_16" class="results">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>T2CON</td>
+    <td id="T2CON_1" class="results">&nbsp;</td>
+    <td id="T2CON_4" class="results">&nbsp;</td>
+    <td id="T2CON_16" class="results">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>CCPR1L</td>
+    <td id="CCPR1L_1" class="results">&nbsp;</td>
+    <td id="CCPR1L_4" class="results">&nbsp;</td>
+    <td id="CCPR1L_16" class="results">&nbsp;</td>
+  </tr>
+   <tr>
+    <td>CCP1CON</td>
+    <td id="CCP1CON_1" class="results">&nbsp;</td>
+    <td id="CCP1CON_4" class="results">&nbsp;</td>
+    <td id="CCP1CON_16" class="results">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Actual PWM Freq</td>
+    <td id="ActualPWM_1" class="results">&nbsp;</td>
+    <td id="ActualPWM_4" class="results">&nbsp;</td>
+    <td id="ActualPWM_16" class="results">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Max Duty Value </td>
+    <td id="MaxDuty_1" class="results">&nbsp;</td>
+    <td id="MaxDuty_4" class="results">&nbsp;</td>
+    <td id="MaxDuty_16" class="results">&nbsp;</td>
+  </tr>
+  
+  <tr>
+    <td>
+      <input type="button" name="btnCalc" value="Calculate" onclick="calcPWM()"></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="4"><textarea name="sourceCode" cols="58" rows="20"></textarea></td>
+    </tr>
+</tbody></table>
+
+</form>
+
+<h2>Sample Code</h2>
+<div id="sourceCode">
+<pre><code>
+/*
+ * Project name:
+     BJD_PWM_Registers
+ * Author:
+     Barton J.  Dring 08/2007
+     Dring Engineering services
+     www.eng-serve.com
+ * Description:
+     This code demonstrates how to set PWM registers manually
+ * Test configuration:
+     MCU:             PIC16F877A
+     Dev.Board:       EasyPIC4
+     Oscillator:      HS, 08.0000 MHz
+     SW:              mikroC v6.0
+ * NOTES:
+     None.
+*/
+
+void main() {
+
+
+  TRISC = 0; // need PWM pin (2) to be an output
+
+  /*
+  * PWM Register Values
+  * Oscillator Frequency Fosc = 8000000
+  * Clock Frequency Fclk = 2000000
+  * PWM Freq = 10000 desired...actual: 10000
+  * Prescaler Value = 1
+  * PR2 = 199
+  * Maximum duty value = 800
+  * Requested Duty Value = 400
+  *
+  * Code Provided AS IS....Use at your own risk!
+  */
+
+  T2CON = 0b00000100; // prescaler + turn on TMR2;
+  PR2 = 0b11000111;
+  CCPR1L = 0b01100100;  // set duty MSB
+  CCP1CON = 0b00001100; // duty lowest bits + PWM mode
+
+  while (1)
+  {
+  
+  }
+}
+</code></pre>
+</div>
+	  </div>
+		<div id="pied"><a href="http://eng-serve.com/index.html">Dring Engineering Services</a></div>
+	</div>
+	
+
+</body></html>
