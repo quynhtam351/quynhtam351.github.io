@@ -3,7 +3,7 @@ layout: page
 title: About me
 subtitle: Looking at people to reflect on themselves.
 ---
-<h3>Mình là Quỳnh Tâm!</h3>
+<h3>Xin chào, mình là Quỳnh Tâm!</h3>
 
 Hiện tại mình là một Kỹ sư điện, bên cạnh đam mê về điện - điện tử, mình cũng rất thích công nghệ thông tin.
 Trang web nhỏ này được lập ra để lưu trữ cũng như chia sẻ những kiến thức mình có được.
@@ -20,8 +20,8 @@ Tôi không cần biết tất cả mọi thứ, tôi chỉ cần biết nơi t�
 
 <h3>Tâm</h3>
 Mình tên Tâm nên thường nói nửa đùa với bạn bè rằng "làm việc có Tâm sẽ khác", mình nói đùa về vai trò của mình trong nhóm, nhưng lại nói thật lòng về việc "có Tâm" khi làm việc.
-Cho dù bạn mình bất kì việc gì, dù mình có thích nó hay không, mình vẫn đặt cái Tâm của mình vào đó, hoàn thành tốt nhất trong khả năng. 
-Đôi khi mình cảm thấy mệt mỏi, tốn thời gian và công sức, nhưng sự tự hào về bản thân và kết quả công việc đem lại cho mình cảm giác tuyệt vời hơn nhiều. Và hơn hết là mình tên Tâm.
+Cho dù làm bất kì việc gì, dù mình có thích nó hay không, mình vẫn đặt cái Tâm của mình vào đó, hoàn thành tốt nhất trong khả năng. 
+Đôi khi mình cảm thấy nản chí, tốn thời gian và công sức hơn người khác, nhưng thành quả đạt được sẽ đem lại cho mình cảm giác tuyệt vời hơn nhiều.
 
 <h3>Mô tả ngắn về những kỹ năng của mình:</h3>
 <meta name="viewport" content="width=device-width, initial-scale=1">
