@@ -13,7 +13,9 @@ Intel® Management Engine là một bộ vi điều khiển nhúng (được tí
 ## Các lỗi thường gặp đối với driver Intel Management Engine Interface
 
 Các dòng chip khác nhau của Intel có driver Intel Management Engine Interface riêng, ví dụ driver version 9.x dành riêng cho chipset đời 4 và 5, driver version 11.x dành cho các chipset mới hơn.
+
 Tuy nhiên, trình cập nhật driver của Windows lại không quan tâm đến điều đó, nó luôn cập nhật phiên bản driver mới nhất cho Intel Management Engine Interface, điều này dẫn đến một số lỗi khó chịu cho người sử dụng.
+
 Lỗi thường gặp nhất là sau khi shutdown máy tính, ta không thể mở máy lên bình thường mà phải rút toàn bộ nguồn điện, đè nút nguồn hoặc tháo pin đối với laptop. Nguyên nhân là do driver hoạt động không đúng khiến phần cứng không được tắt hoàn toàn, treo máy nhưng màn hình tắt khiến ta lầm tưởng máy đã tắt.
 Đây cũng là nguyên nhân khiến laptop bị nóng dù đã tắt, hoặc laptop hết pin khi shutdown.
 
