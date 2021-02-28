@@ -34,6 +34,8 @@ Local Computer Policy → Computer Configuration → Administrative Templates �
 Sau đó các bạn nhấp đúp vào dòng *Do not include drivers with Windows Updates*.
 Trong hộp thoại tiếp theo, các tick vào Enable sau đó nhấn OK là xong.
 
+![Do not include drivers with Windows Updates](https://quynhtam351.github.io/img/do-not-include-drivers-with-windows-updates.png){: .center-block :}
+
 Ngoài ra còn có các cách Tắt trình update driver tự động của windows khác, các bạn có thể tra google để tham khảo thêm.
 
 ## Tải driver Intel Management Engine Interface từ tranh chủ nhà sản xuất
