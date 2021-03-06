@@ -41,7 +41,7 @@ Sửa giá trị USB_MSD_PWR_OFF_TIME=0, sau đó lưu lại rồi reboot.
 
 Bên cạnh việc Raspberry ngắt nguồn cổng USB thì firmware của JMS578 cũng là một vấn đề. Mình đã thử qua vài bản, nhưng hiện tại bản firmware boot được là "JMS578-Hardkenel-Release-v173.01.00.02-20190306.bin".
 Việc cập nhật firmware khá đơn giản, trên Windows chỉ cần tải về FwUpdateTool.exe, chạy dưới quyền admin, Load file firmware, tick vào ô RD Version và Include JMS577 NVRAM sau đó nhấn Run là xong.
-![FwUpdateTool_v1_19_16_24](https://quynhtam351.github.io/img/FwUpdateTool_v1_19_16_24.png)
+![FwUpdateTool_v1_19_16_24](https://quynhtam351.github.io/img/FwUpdateTool_v1_19_16_24.png){: .center-block :}
 Tool cũng có phiên bản cho Linux với tham số mềm dẻo hơn rất nhiều.
 Bài viết tham khảo trên odroid [JMS578 firmware update](https://wiki.odroid.com/odroid-xu4/software/jms578_fw_update)
 Link tải firmware: [JMS578 firmware download](https://www.usbdev.ru/files/jmicron/jms578firmware/)
@@ -57,4 +57,4 @@ Thông số idVendor và idProduct có thể tra trên google, tìm trong Device
 
 Sau các tinh chỉnh trên, mình clone thẻ SD sang SSD sau đó boot thành công.
 Kết quả speed test đạt 200MB/s, mình chưa hài lòng lắm và nghĩ là tìm một box khác tương thích sẽ đỡ tốn công sức và đạt kết quả tốt hơn. Đối với mình thì đây là một trường hợp tích luỹ kinh nghiệm khá tốt.
-![SSD Orico SATA to USB JMS578 speed test](https://quynhtam351.github.io/img/raspberrypi-orico-2580u3-test.png)
+![SSD Orico SATA to USB JMS578 speed test](https://quynhtam351.github.io/img/raspberrypi-orico-2580u3-test.png){: .center-block :}
