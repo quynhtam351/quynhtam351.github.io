@@ -38,7 +38,7 @@ Cơ bản là Raspberry sẽ tắt cổng USB trong một khoảng thời gian n
 sudo -E rpi-eeprom-config --edit
 ~~~
 
-Sửa giá trị USB_MSD_PWR_OFF_TIME=0, sau đó lưu lại rồi reboot.
+Sửa giá trị USB_MSD_PWR_OFF_TIME=0, nếu không có sẵn giá trị này bạn có thể tự thêm vào, sau đó lưu lại rồi reboot. 
 
 ## Firmware JMS578
 
@@ -55,13 +55,20 @@ Link tải firmware: [JMS578 firmware download](https://www.usbdev.ru/files/jmic
 
 ## Tắt UAS, sử dụng USB Mass Storage
 
-USB Attached SCSI (UAS) hoặc USB Attached SCSI Protocol (UASP) là một giao thức máy tính được sử dụng để di chuyển dữ liệu đến và đi từ các thiết bị lưu trữ USB như ổ cứng (HDD), ổ đĩa thể rắn (SSD) và ổ USB. UAS phụ thuộc vào giao thức USB và sử dụng bộ lệnh SCSI tiêu chuẩn. Việc sử dụng UAS thường cung cấp khả năng truyền nhanh hơn so với các trình điều khiển Truyền tải hàng loạt chỉ dành cho lưu trữ khối lượng lớn USB (BOT) cũ hơn.
+>USB Attached SCSI (UAS) hoặc USB Attached SCSI Protocol (UASP) là một giao thức máy tính được sử dụng để di chuyển dữ liệu đến và đi từ các thiết bị lưu trữ USB như ổ cứng (HDD), ổ đĩa thể rắn (SSD) và ổ USB. UAS phụ thuộc vào giao thức USB và sử dụng bộ lệnh SCSI tiêu chuẩn. Việc sử dụng UAS thường cung cấp khả năng truyền nhanh hơn so với các trình điều khiển Truyền tải hàng loạt chỉ dành cho lưu trữ khối lượng lớn USB (BOT) cũ hơn.
 
 Tuy chipset JMS578 có hỗ trợ UASP nhưng lại không tương thích với Raspberry, việc tắt UAS sẽ khiến tốc độ chỉ còn khoảng 70% nhưng đạt được sự ổn định.
 
-Để tắt UAS, ta thêm tham số "usb-storage.quirks=aaaa:bbbb:u" (trong đó aaaa là  idVendor, bbbb là idProduct) vào đầu file /boot/cmdline.txt, bạn có thể thực hiện bằng notepad++ trên Windows hoặc nano trên Raspian.
+Để tắt UAS, ta thêm tham số bên dưới vào đầu file /boot/cmdline.txt, bạn có thể thực hiện bằng notepad++ trên Windows hoặc nano trên Raspian.
+
+~~~
+usb-storage.quirks=aaaa:bbbb:u
+~~~
+
+Trong đó aaaa là  idVendor, bbbb là idProduct.
 
 Thông số idVendor và idProduct có thể tra trên google, tìm trong Devices Manangement của Windows hoặc dùng lệnh dmesg trên Raspian. Tốt nhất bạn nên tự xem thông số của thiết bị mình đángowr hữu vì một số trường hợp adapter có idVendor và idProduct không giống nhau dù cùng dòng sản phẩm.
+Đối với box Orico mình dùng thì idVendor là 152d, idProduct là 0578.
 
 ## Kết quả
 
