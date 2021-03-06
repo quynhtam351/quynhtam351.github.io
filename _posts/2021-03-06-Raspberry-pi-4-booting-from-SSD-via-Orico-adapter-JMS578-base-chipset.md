@@ -13,10 +13,10 @@ Sau một ngày tra google mà chưa có kết quả khả quan, mình đặt mu
 Trong thời gian chờ hàng ship về, mình cố fix box Orico này, tìm kiếm trên google, thử 7749 lần và đã làm nó hoạt động được.
 
 Mình tham khảo qua khá nhiều bài thảo luận và tutorial trên internet, một trong số những bài quan trọng là:
-(https://www.devwithimagination.com/2021/01/03/raspberry-pi-usb-boot-with-jms578-based-usb-to-sata-enclosures/)
-(https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2711_bootloader_config.md)
-(https://www.raspberrypi.org/forums/viewtopic.php?t=245931)
-(https://github.com/raspberrypi/rpi-eeprom/issues/266)
+[Raspberry Pi USB Boot with JMS578 Based USB-to-SATA Enclosures](https://www.devwithimagination.com/2021/01/03/raspberry-pi-usb-boot-with-jms578-based-usb-to-sata-enclosures/)
+[Raspberry Pi 4 bootloader configuration](https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2711_bootloader_config.md)
+[STICKY: If you have a Raspberry Pi 4 and are getting bad speeds transferring data to/from USB3.0 SSDs, read this](https://www.raspberrypi.org/forums/viewtopic.php?t=245931)
+[SOLVED: SSD Enclosures with Jmicron chips JMS580 and JMS583 don't boot up. RPi4.](https://github.com/raspberrypi/rpi-eeprom/issues/266)
 
 Trong đó những yếu tố chính bao gồm:
 
