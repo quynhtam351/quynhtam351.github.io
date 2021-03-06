@@ -67,7 +67,7 @@ usb-storage.quirks=aaaa:bbbb:u
 
 Trong đó aaaa là  idVendor, bbbb là idProduct.
 
-Thông số idVendor và idProduct có thể tra trên google, tìm trong Devices Manangement của Windows hoặc dùng lệnh dmesg trên Raspian. Tốt nhất bạn nên tự xem thông số của thiết bị mình đángowr hữu vì một số trường hợp adapter có idVendor và idProduct không giống nhau dù cùng dòng sản phẩm.
+Thông số idVendor và idProduct có thể tra trên google, tìm trong Devices Manangement của Windows hoặc dùng lệnh dmesg trên Raspian. Tốt nhất bạn nên tự xem thông số của thiết bị mình đang sở hữu vì một số trường hợp adapter có idVendor và idProduct không giống nhau dù cùng dòng sản phẩm.
 Đối với box Orico mình dùng thì idVendor là 152d, idProduct là 0578.
 
 ## Kết quả
