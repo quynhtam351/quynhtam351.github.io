@@ -73,6 +73,6 @@ Thông số idVendor và idProduct có thể tra trên google, tìm trong Device
 ## Kết quả
 
 Sau các tinh chỉnh trên, mình clone thẻ SD sang SSD sau đó boot thành công.
-Kết quả speed test đạt 200MB/s, mình chưa hài lòng lắm và nghĩ là tìm một box khác tương thích sẽ đỡ tốn công sức và đạt kết quả tốt hơn. Đối với mình thì đây là một trường hợp tích luỹ kinh nghiệm khá tốt.
+Kết quả speed test đạt 200MB/s, chưa ấn tượng lắm và mình nghĩ là tìm một box khác tương thích sẽ đỡ tốn công sức và đạt kết quả tốt hơn. Tuy nhiên đối với mình thì đây là một trường hợp vọc vạch rất vui và tích luỹ kinh nghiệm khá tốt, cảm giác boot thành công đúng là đã :D
 
 ![SSD Orico SATA to USB JMS578 speed test](https://quynhtam351.github.io/img/raspberrypi-orico-2580u3-test.png){: .center-block :}
