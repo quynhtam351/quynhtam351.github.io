@@ -16,8 +16,6 @@ Mình tham khảo qua khá nhiều bài thảo luận và tutorial trên interne
 
 [Raspberry Pi USB Boot with JMS578 Based USB-to-SATA Enclosures](https://www.devwithimagination.com/2021/01/03/raspberry-pi-usb-boot-with-jms578-based-usb-to-sata-enclosures/)
 
-[Raspberry Pi 4 bootloader configuration](https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2711_bootloader_config.md)
-
 [STICKY: If you have a Raspberry Pi 4 and are getting bad speeds transferring data to/from USB3.0 SSDs, read this](https://www.raspberrypi.org/forums/viewtopic.php?t=245931)
 
 [SOLVED: SSD Enclosures with Jmicron chips JMS580 and JMS583 don't boot up. RPi4.](https://github.com/raspberrypi/rpi-eeprom/issues/266)
@@ -26,14 +24,11 @@ Trong đó những yếu tố chính bao gồm:
 
 ## USB_MSD_PWR_OFF_TIME
 
-Tài liệu trên trang Raspberry nói rằng:
+Tài liệu trên trang [Raspberry Pi 4 bootloader configuration](https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2711_bootloader_config.md) nói rằng:
 
 >During USB mass storage boot, power to the USB ports is switched off for a short time to ensure the correct operation of USB mass storage devices. Most devices work correctly using the default setting: change this only if you have problems booting from a particular device. Setting USB_MSD_PWR_OFF_TIME=0 will prevent power to the USB ports being switched off during USB mass storage boot.
-
 Minimum: 250
-
 Maximum: 5000
-
 Default: 1000 (1 second)
 
 Cơ bản là Raspberry sẽ tắt cổng USB trong một khoảng thời gian nhỏ khi boot, nhưng có vẻ như "tính năng" này khiến Raspberry không thể truy cập SSD được nữa, do đó mình đã thử tắt tính năng này theo khuyến nghị của cư dân mạng.
